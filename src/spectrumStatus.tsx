@@ -16,7 +16,7 @@ interface SpectrumStatusData {
 const SpectrumStatus = () => {
   const [spectrumStatus, setSpectrumStatus] = useState<SpectrumStatusData>();
 
-  const getSpectrumStatus = async () => {
+  const getSpectrumStatus = async (): Promise<SpectrumStatusData> => {
     try {
       const response = await fetch(
         "https://webfrontendassignment-isaraerospace.azurewebsites.net/api/SpectrumStatus"
@@ -27,6 +27,7 @@ const SpectrumStatus = () => {
       }
       const data = await response.json();
       setSpectrumStatus(data);
+      return data;
     } catch (error) {
       console.log(error);
       throw new Error("Something went wrong");
