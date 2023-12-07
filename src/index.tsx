@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
 import SpectrumStatus from "./spectrumStatus";
 import SpectrumWS from "./spectrumWS";
+import CommentsForImprovement from "./comments";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "spectrumWS",
     element: <SpectrumWS />,
+  },
+  {
+    path: "comments",
+    element: <CommentsForImprovement />,
   },
 ]);
 
