@@ -38,10 +38,6 @@ const BarChart = ({
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         width: "50%",
       }}
     >

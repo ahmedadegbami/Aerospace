@@ -1,3 +1,5 @@
+import React from "react";
+
 // Potential improvements of the API structure
 
 // 1. Data Format

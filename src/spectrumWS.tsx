@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import BarChart from "./components/barChart";
 import { useNavigate } from "react-router-dom";
 import AlertMessage from "./alertMessage";
+import useSound from "use-sound";
+
+const warningAlert = require("./warning_alarm.mp3");
 
 export interface SpectrumWSData {
   Velocity: number;
@@ -17,6 +20,8 @@ const SpectrumWS = () => {
   const [instructions, setInstructions] = useState<string>("");
 
   const navigate = useNavigate();
+
+  const [play] = useSound(warningAlert);
 
   useEffect(() => {
     const socket = new WebSocket(
@@ -67,6 +72,9 @@ const SpectrumWS = () => {
     setInstructions(event.target.value);
   };
 
+  if (spectrumWS && spectrumWS.IsActionRequired) {
+    play();
+  }
   return (
     <>
       {spectrumWS && (
