@@ -4,7 +4,7 @@ import { Chart, registerables } from "chart.js";
 import React from "react";
 Chart.register(...registerables);
 
-interface SpectrumStatusData {
+export interface SpectrumStatusData {
   velocity: number;
   altitude: number;
   temperature: number;
